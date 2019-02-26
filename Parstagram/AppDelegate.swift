@@ -24,6 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://obscure-retreat-20229.herokuapp.com/parse"
             })
         )
+        
+        
+        if PFUser.current() != nil {
+            let main = UIStoryboard(name: "Main", bundle: nil)
+            
+            let feedNavigationController = main.instantiateViewController(withIdentifier: "FeedNavigationController")
+
+            window?.rootViewController = feedNavigationController
+            
+            
+            
+        }
+        
+        
         return true
     }
 
